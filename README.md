@@ -3,6 +3,8 @@
 [![Packagist Downloads](https://img.shields.io/packagist/dt/roots/wp-password-bcrypt.svg?style=flat-square)](https://packagist.org/packages/roots/wp-password-bcrypt)
 [![Build Status](https://img.shields.io/travis/roots/wp-password-bcrypt.svg?style=flat-square)](https://travis-ci.org/roots/wp-password-bcrypt)
 
+**IMPORTANT: The only difference with the official version of wp-password-bcrypt and this one is that this version allows you to install as a MUST-USE plugin using composer. (See the documentation [below](https://github.com/geminilabs/wp-password-bcrypt#as-a-must-use-plugin-using-composer))**
+
 wp-password-bcrypt is a WordPress plugin to replace WP's outdated and insecure MD5-based password hashing with the modern and secure [bcrypt](https://en.wikipedia.org/wiki/Bcrypt).
 
 This plugin requires PHP >= 5.5.0 which introduced the built-in [`password_hash`](http://php.net/manual/en/function.password-hash.php) and [`password_verify`](http://php.net/manual/en/function.password-verify.php) functions.
@@ -23,6 +25,29 @@ This plugin is a Composer library so it can be installed in a few ways:
 `composer require roots/wp-password-bcrypt`
 
 `wp-password-bcrypt.php` file will be automatically autoloaded by Composer and it *won't* appear in your plugins.
+
+#### As a must-use plugin using Composer
+
+Here is an example composer.json that uses composer-installers to install this plugin as a mu-plugin:
+
+```json
+{
+  "require": {
+    "php": ">=5.6",
+    "composer/installers": "^1.5.0",
+    "geminilabs/wp-password-bcrypt": "^1.0.0"
+  },
+  "extra": {
+    "installer-paths": {
+      "public/wp-content/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin",
+        "geminilabs/wp-password-bcrypt"
+      ]
+    },
+    "wordpress-install-dir": "public"
+  }
+}
+```
 
 #### Manually as a must-use plugin
 

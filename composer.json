@@ -1,5 +1,6 @@
 {
-  "name": "roots/wp-password-bcrypt",
+  "name": "geminilabs/wp-password-bcrypt",
+  "type": "wordpress-plugin",
   "license": "MIT",
   "description": "WordPress plugin which replaces wp_hash_password and wp_check_password's phpass hasher with PHP 5.5's password_hash and password_verify using bcrypt.",
   "homepage": "https://roots.io/plugins/wp-password-bcrypt",
